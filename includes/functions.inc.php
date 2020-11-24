@@ -21,6 +21,12 @@
             'isSubpage' => true
         ],
 
+        // menu item 4
+        [
+            'title' => 'About',
+            'isSubpage' => true
+        ]
+
     ];
 
     function renderNavigation($navItems){
@@ -43,7 +49,39 @@
             if($filtered['isSubpage']){
                 return 'class="subpage"';
             }
+
+            if(!$filtered){
+                return 'class="subpage"';
+            }
+
+        } 
+    }
+
+    function includeContent($menu){
+        $fileName = '';
+        switch($menu){
+            case null:
+            case 'home':
+                $fileName = 'contents/home.php';
+            break;
+
+            case 'generic':
+                $fileName = 'contents/generic.php';
+            break;
+
+            case 'elements':
+                $fileName = 'contents/elements.php';
+            break;
+
+            case 'about':
+                $fileName = 'contents/about.php';
+            break;
+
+            default:
+                $fileName = 'contents/notfound.php';
         }
+
+        include $fileName;
     }
 
 ?>

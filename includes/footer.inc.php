@@ -3,7 +3,7 @@
 
 					<h3>Get in touch</h3>
 
-					<form action="#" method="post">
+					<form action="contact_script.php" method="post">
 
 						<div class="field half first">
 							<label for="name">Name</label>
